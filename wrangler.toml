@@ -1,0 +1,33 @@
+name = "interview-prep-simulator"
+main = "src/index.ts"
+compatibility_date = "2024-01-01"
+
+# Workers AI binding
+[ai]
+binding = "AI"
+
+# D1 Database
+[[d1_databases]]
+binding = "DB"
+database_name = "interview_prep_db"
+database_id = "b94b05b6-af1c-4eb1-86e2-c419d57a3c75"
+
+# KV for session cache
+[[kv_namespaces]]
+binding = "SESSION_CACHE"
+id = "e1412431d47143cca52f34f7ae2dd238"
+
+# Durable Objects
+[[durable_objects.bindings]]
+name = "USER_MEMORY"
+class_name = "UserMemoryDO"
+
+[[migrations]]
+tag = "v1"
+new_classes = ["UserMemoryDO"]
+
+# Environment variables
+[vars]
+ENVIRONMENT = "development"
+DEEPGRAM_API_KEY = "your-deepgram-key"
+ELEVENLABS_API_KEY = "your-elevenlabs-key"
