@@ -21,6 +21,7 @@ export interface Env {
   SESSION_CACHE: KVNamespace;
   VECTORIZE?: VectorizeIndex;
   USER_MEMORY: DurableObjectNamespace;
+  ASSETS: Fetcher;
 }
 
 export type InterviewType = 

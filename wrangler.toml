@@ -26,6 +26,10 @@ class_name = "UserMemoryDO"
 tag = "v1"
 new_classes = ["UserMemoryDO"]
 
+# Static assets
+[site]
+bucket = "./public"
+
 # Environment variables
 [vars]
 ENVIRONMENT = "development"

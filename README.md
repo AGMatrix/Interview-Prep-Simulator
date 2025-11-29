@@ -240,6 +240,11 @@ User starts session
 
 ---
 
+## 🌐 Live Deployment
+
+- **Frontend**: https://main.interview-prep-frontend.pages.dev
+- **API Backend**: https://interview-prep-simulator.garg-vision.workers.dev
+
 ## Quick Start
 
 ### Prerequisites
@@ -317,16 +322,7 @@ Update `src/frontend/src/App.tsx` with your Worker URL:
 const API_URL = 'https://interview-prep-simulator.YOUR_SUBDOMAIN.workers.dev';
 ```
 
-### 5. Run Frontend Locally
-```bash
-cd src/frontend
-npm install
-npm run dev
-```
-
-Visit `http://localhost:5173`
-
-### 6. Deploy Frontend to Cloudflare Pages (Optional)
+### 5. Deploy Frontend to Cloudflare Pages
 ```bash
 cd src/frontend
 npm run build
@@ -461,19 +457,10 @@ Edit [src/utils/prompts.ts](src/utils/prompts.ts):
 
 ## 🧪 Testing
 
-### Local Development
-```bash
-# Backend (with remote Cloudflare bindings)
-wrangler dev
-
-# Frontend
-cd src/frontend && npm run dev
-```
-
 ### Testing API Endpoints
 ```bash
 # Start a session
-curl -X POST 'http://localhost:8787/api/session/start' \
+curl -X POST 'https://interview-prep-simulator.garg-vision.workers.dev/api/session/start' \
   -H 'Content-Type: application/json' \
   -d '{
     "userId": "test-user-1",
@@ -482,14 +469,14 @@ curl -X POST 'http://localhost:8787/api/session/start' \
   }'
 
 # Submit an answer
-curl -X POST 'http://localhost:8787/api/session/{SESSION_ID}/message' \
+curl -X POST 'https://interview-prep-simulator.garg-vision.workers.dev/api/session/{SESSION_ID}/message' \
   -H 'Content-Type: application/json' \
   -d '{
     "message": "I would use Redis for caching because it provides fast in-memory access with TTL support and persistence options."
   }'
 
 # Gap analysis
-curl -X POST 'http://localhost:8787/api/gap-analysis' \
+curl -X POST 'https://interview-prep-simulator.garg-vision.workers.dev/api/gap-analysis' \
   -H 'Content-Type: application/json' \
   -d '{
     "resume": "Full stack developer with 3 years experience in React, Node.js, MongoDB...",
